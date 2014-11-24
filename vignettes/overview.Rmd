@@ -9,7 +9,7 @@ vignette: >
   \usepackage[utf8]{inputenc}
 ---
 
-## choose the mic you want!
+## Choose the mic you want!
 
 Now with this package, you can try to get all the mic models by calling ```gModel()```.
 This will give you a list of models available. Inside the ```gModel()``` function, a helper function ```getMember()``` is called to get a specific member of each vector in a list.
