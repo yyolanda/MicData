@@ -15,9 +15,9 @@
 gModel <- function(){
 	## create the url
 	url <- "https://www.neumann.com/?id=current_microphones&lang=en"
-	url2 <- RCurl::getURL(url)
+	##url2 <- RCurl::getURL(url, ssl.verifypeer = FALSE)
 	## read the contents from url
-	content <- readLines(url2)
+	content <- readLines(url)
 	## extract information that has a certain pattern
 	myPattern  <-  '<option id="opt_(.*)_description">'
 	datalines  <-  grep(myPattern,content,value=TRUE)

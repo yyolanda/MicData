@@ -22,13 +22,13 @@
 #' gMicData("tlm49")
 
 gMicData <- function(model.name = "u87"){
+	stopifnot(is.character(model.name))
 	## exclude the whitespace and convert the input string to lowercase
 	model_name <- tolower(gsub(" ", "", model.name))
 	## create the url
 	url <- paste0("https://www.neumann.com/?lang=en&id=current_microphones&cid=", model_name, "_data")
-	url2 <- RCurl::getURL(url)
 	## read the contents from url
-	content <- readLines(url2)
+	content <- readLines(url)
 	## extract information that has a certain pattern
 	myPattern  <-  '<td class="text">(.*)</td>'
 	datalines  <-  grep(myPattern,content,value=TRUE)

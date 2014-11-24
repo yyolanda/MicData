@@ -12,7 +12,11 @@ test_that("number of rows equal", {
 })
 
 test_that("whitespace is ignored", {
-	expect_equal(gMicData("tlm49"), gDescription("tlm 49"))
+	expect_equal(gMicData("tlm49"), gMicData("tlm 49"))
+})
+
+test_that("Invalid input", {
+	expect_error(gMicData(49))
 })
 
 ## For gDescription()
@@ -28,6 +32,9 @@ test_that("whitespace is ignored", {
 	expect_equal(gDescription("tlm49"), gDescription("tlm 49"))
 })
 
+test_that("Invalid input", {
+	expect_error(gDescription(49))
+})
 
 ## For gModel()
 test_that("always returns character vector", {

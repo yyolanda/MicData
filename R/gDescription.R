@@ -17,13 +17,13 @@
 #' gDescription("tlm49")
 
 gDescription <- function(model.name = "u87"){
+	stopifnot(is.character(model.name))
 	## convert the input string to lowercase
 	model_name <- tolower(gsub(" ", "", model.name))
 	## create the url
 	url <- paste0("https://www.neumann.com/?lang=en&id=current_microphones&cid=", model_name, "_description")
-	url2 <- RCurl::getURL(url)
 	## read the contents from url
-	content <- readLines(url2)
+	content <- readLines(url)
 	## extract information that has a certain pattern
 	myPattern  <-  '<div class="textBlock">'
 	datalines  <-  content[grep(myPattern,content)+1]
@@ -31,8 +31,8 @@ gDescription <- function(model.name = "u87"){
 	result <- gsub("<br/>", "", generalDes)
 	result2 <- gsub("\t", "", result)
 	result3 <- gsub("/b", "", result2)
-	result4 <- gsub("b", "", result3)
-	return(result4)
+
+	return(result3)
 }
 
 
