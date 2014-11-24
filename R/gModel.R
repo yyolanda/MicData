@@ -14,7 +14,7 @@
 
 gModel <- function(){
 	## create the url
-	url <- "https://www.neumann.com/?id=current_microphones&lang=en"
+	url <- "http://www.neumann.com/?id=current_microphones&lang=en"
 	##url2 <- RCurl::getURL(url, ssl.verifypeer = FALSE)
 	## read the contents from url
 	content <- readLines(url)

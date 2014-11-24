@@ -9,19 +9,39 @@ vignette: >
   \usepackage[utf8]{inputenc}
 ---
 
+```{r}
+## Load the MicData package!
+library(MicData)
+```
+
 ## Choose the mic you want!
 
 Now with this package, you can try to get all the mic models by calling ```gModel()```.
 This will give you a list of models available. Inside the ```gModel()``` function, a helper function ```getMember()``` is called to get a specific member of each vector in a list.
 
+```{r}
+## Let's get all the model name!
+gModel()
+```
+
 ## Get a description!
 
-After you have make your decision, use the model name that you get from ```gModel()``` as the input of ```gDescription()``` to get a general description of that mic!
+After you have make your decision, use the model name that you get from ```gModel()``` as the input of ```gDescription()``` to get a general description of that mic! Let's try to get a description of the TLM49 mic by using ```gDescription("tlm49")```. Note if you don't pass any input to ```gDescription()```, the default input is ```"u87"``` which gets you the description of the widely recognized u87 mic~!
+
+```{r}
+## Get the description of TLM49!
+gDescription("tlm49")
+```
 
 ## Please tell me the technical data!
 
-You decided that you like this mic very much according to its description. Why not have a look at its technical data before you buy it? Again, use the model name that you get from ```gModel()``` as the input of ```gMicData()``` to get the technical data of your favorite mic! To me, the KU100 binaural mic seems to be very interesting! ```gMicData("ku100")``` would give me what I want!
+You decided that you like this mic very much according to its description. Why not have a look at its technical data before you buy it? Again, use the model name that you get from ```gModel()``` as the input of ```gMicData()``` to get the technical data of your favorite mic! To me, the KU100 binaural mic seems to be very interesting! ```gMicData("ku100")``` would give me what I want! Note if you don't pass any input to ```gMicData()```, the default input is ```"u87"``` which gets you the technical data of the widely recognized u87 mic~!
+
+```{r, results='asis'}
+## Get the techinical data of KU100!
+knitr::kable(gMicData("ku100"))
+```
 
 ## Reflections
 
-Everything work nicely until I got to the point to do a ```devtools::check()```. Unfortunately, I can not get ```devtools::check()``` completed because the url I used is a secure site that begins with ```https://``` instead of ```http://``` and ```readLines()``` cannot access the server easily when doing such a check. ```getURL()``` in 'RCurl" package seems to be the solution, but in that case all the html syntax and useful data will clump together into several character strings instead of separating into lines. I have to think of another way to extract the data, which I don't have any idea at the moment.. Function ```htmlTreeParse()``` in "XML" package also seems to be useful to parse the html syntax. However, I was stuck on how to deal with the parsed object after applying ```htmlTreeParse()``` as I am not familiar with html format at all. Any thoughts would be appreciated!
+Everything worked nicely until I got to the point to do a ```devtools::check()```. I could not get ```devtools::check()``` completed at first because the url I used originally was a secure site that begins with ```https://``` instead of ```http://``` and ```readLines()``` could not access the server easily when doing such a check. ```getURL()``` in 'RCurl" package seems to be the solution, but in that case all the html syntax and useful data would clump together into several character strings instead of separating into lines. I would have to think of another way to extract the data, which I don't have any idea how to do that.. Function ```htmlTreeParse()``` in "XML" package also seems to be useful to parse the html syntax. However, I was stuck on how to deal with the parsed object after applying ```htmlTreeParse()``` as I am not familiar with html format at all. Then, I tried to change ```https://``` to ```http://``` and luckily, it worked! Now I can run a ```check()``` without getting any error! However, I still don't have any clue on how to deal with the problem if the url really begins with ```https://```. Any thoughts would be appreciated! =)

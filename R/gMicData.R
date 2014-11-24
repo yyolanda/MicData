@@ -26,7 +26,7 @@ gMicData <- function(model.name = "u87"){
 	## exclude the whitespace and convert the input string to lowercase
 	model_name <- tolower(gsub(" ", "", model.name))
 	## create the url
-	url <- paste0("https://www.neumann.com/?lang=en&id=current_microphones&cid=", model_name, "_data")
+	url <- paste0("http://www.neumann.com/?lang=en&id=current_microphones&cid=", model_name, "_data")
 	## read the contents from url
 	content <- readLines(url)
 	## extract information that has a certain pattern
