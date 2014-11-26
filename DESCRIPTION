@@ -7,7 +7,7 @@ Description: Query www.neumann.com to get the technical data of a Neumann
 Depends:
     R (>= 3.1.2)
 Imports:
-    RCurl
+    assertthat
 License: CC0
 LazyData: true
 Suggests:

@@ -11,13 +11,14 @@
 #' of your chosen mic.
 #' @note case in \code{model.name} is ignored
 #' @keywords misc
-#' @export
+#' @export gDescription
 #' @examples
 #' gDescription("KU100")
 #' gDescription("tlm49")
 
+
 gDescription <- function(model.name = "u87"){
-	stopifnot(is.character(model.name))
+	assertthat::assert_that(is.character(model.name))
 	## convert the input string to lowercase
 	model_name <- tolower(gsub(" ", "", model.name))
 	## create the url

@@ -16,13 +16,14 @@
 #' chosen mic.
 #' @keywords misc
 #' @note case in \code{model.name} is ignored
-#' @export
+#' @export gMicData
 #' @examples
 #' gMicData("KU100")
 #' gMicData("tlm49")
 
+
 gMicData <- function(model.name = "u87"){
-	stopifnot(is.character(model.name))
+	assertthat::assert_that(is.character(model.name))
 	## exclude the whitespace and convert the input string to lowercase
 	model_name <- tolower(gsub(" ", "", model.name))
 	## create the url
