@@ -35,6 +35,8 @@ browseVignettes(package = "MicData")
 after you install the package to read the vignettes!
 The usage of the fuctions included in this MicData package is introduced in the vignettes!
 
+UPDATE: I realized that for some weird reason, I cannot push my inst/doc folder to github at the moment..lol You may want to use ```devtools::build_vignettes()``` locally to build the vignettes first and then use the above ```browseVignettes(package = "MicData")``` code to read the vignettes.
+
 ## Finally...
 
 Hope you enjoy playing with MicData! =)
