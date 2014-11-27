@@ -45,38 +45,37 @@ gMicData <- function(model.name = "u87"){
 	myPattern  <-  '<td class="text">(.*)</td>'
 	datalines  <-  grep(myPattern,content,value=TRUE)
 	## get rid of html tags
-	datalines_clean <- gsub(myPattern, "\\1", datalines)
-	datalines_clean2 <- gsub("<.*?>","", datalines_clean)
-	## create a table
+	datalines_clean <- gsub("<.*?>","", datalines)
+	## create resultant table(s) and special case handling
 	if(url == "http://www.neumann.com/?lang=en&id=current_microphones&cid=km100_data"){
-		result_1 <- as.data.frame(matrix(datalines_clean2[1:80],ncol=4,byrow=TRUE))
+		result_1 <- as.data.frame(matrix(datalines_clean[1:80],ncol=4,byrow=TRUE))
 		colnames(result_1) <- c("Parameter", "Value_1", "Value_2", "Value_3")
-		result_2 <- as.data.frame(matrix(datalines_clean2[81:140],ncol=3,byrow=TRUE))
+		result_2 <- as.data.frame(matrix(datalines_clean[81:140],ncol=3,byrow=TRUE))
 		colnames(result_2) <- c("Parameter", "Value_1", "Value_2")
-		result_3 <- as.data.frame(matrix(datalines_clean2[141:200],ncol=3,byrow=TRUE))
+		result_3 <- as.data.frame(matrix(datalines_clean[141:200],ncol=3,byrow=TRUE))
 		colnames(result_3) <- c("Parameter", "Value_1", "Value_2")
 		result <- list(result_1, result_2, result_3)
 	}
 	else if(url == "http://www.neumann.com/?lang=en&id=current_microphones&cid=km_a_data"){
-		result_1 <- as.data.frame(matrix(datalines_clean2[1:80],ncol=4,byrow=TRUE))
+		result_1 <- as.data.frame(matrix(datalines_clean[1:80],ncol=4,byrow=TRUE))
 		colnames(result_1) <- c("Parameter", "Value_1", "Value_2", "Value_3")
-		result_2 <- as.data.frame(matrix(datalines_clean2[81:160],ncol=4,byrow=TRUE))
+		result_2 <- as.data.frame(matrix(datalines_clean[81:160],ncol=4,byrow=TRUE))
 		colnames(result_2) <- c("Parameter", "Value_1", "Value_2", "Value_3")
-		result_3 <- as.data.frame(matrix(datalines_clean2[161:220],ncol=3,byrow=TRUE))
+		result_3 <- as.data.frame(matrix(datalines_clean[161:220],ncol=3,byrow=TRUE))
 		colnames(result_3) <- c("Parameter", "Value_1", "Value_2")
 		result <- list(result_1, result_2, result_3)
 	}
 	else if(url == "http://www.neumann.com/?lang=en&id=current_microphones&cid=kmd_data"){
-		result_1 <- as.data.frame(matrix(datalines_clean2[1:76],ncol=4,byrow=TRUE))
+		result_1 <- as.data.frame(matrix(datalines_clean[1:76],ncol=4,byrow=TRUE))
 		colnames(result_1) <- c("Parameter", "Value_1", "Value_2", "Value_3")
-		result_2 <- as.data.frame(matrix(datalines_clean2[77:152],ncol=4,byrow=TRUE))
+		result_2 <- as.data.frame(matrix(datalines_clean[77:152],ncol=4,byrow=TRUE))
 		colnames(result_2) <- c("Parameter", "Value_1", "Value_2", "Value_3")
-		result_3 <- as.data.frame(matrix(datalines_clean2[153:209],ncol=3,byrow=TRUE))
+		result_3 <- as.data.frame(matrix(datalines_clean[153:209],ncol=3,byrow=TRUE))
 		colnames(result_3) <- c("Parameter", "Value_1", "Value_2")
 		result <- list(result_1, result_2, result_3)
 	}
 	else{
-		result <- as.data.frame(matrix(datalines_clean2,ncol=2,byrow=TRUE))
+		result <- as.data.frame(matrix(datalines_clean,ncol=2,byrow=TRUE))
 		colnames(result) <- c("Parameter", "Value")
 	}
 	## return the resultant list or data.frame

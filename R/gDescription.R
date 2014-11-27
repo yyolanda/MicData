@@ -6,7 +6,6 @@
 #'
 #' @param model.name This is the model name of your chosen mic. Please use
 #' one of the model names that results from calling function "gModel".
-#'
 #' @return character This character vector contains the general description.
 #' of your chosen mic.
 #' @note Case in \code{model.name} is ignored.
@@ -39,13 +38,13 @@ gDescription <- function(model.name = "u87"){
 	## extract information that has a certain pattern
 	myPattern  <-  '<div class="textBlock">'
 	mySecPattern <- '<div class="headline">'
+	## get the lines with description
 	if(grepl(mySecPattern, content[grep(myPattern, content)+1][1])){
 		myDataLines <- content[grep(myPattern, content)+2]
 	}
 	else{
 		myDataLines  <-  content[grep(myPattern,content)+1]
 	}
-
 	generalDes <- myDataLines[1]
 	## remove all the html tag, and other unwanted characters
 	result <- gsub("<.*?>", "", generalDes)

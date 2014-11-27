@@ -10,7 +10,7 @@
 
 <meta name="author" content="Yolanda Yang" />
 
-<meta name="date" content="2014-11-25" />
+<meta name="date" content="2014-11-26" />
 
 <title>MicData</title>
 
@@ -54,7 +54,7 @@ code > span.er { color: #ff0000; font-weight: bold; }
 <div id="header">
 <h1 class="title">MicData</h1>
 <h4 class="author"><em>Yolanda Yang</em></h4>
-<h4 class="date"><em>2014-11-25</em></h4>
+<h4 class="date"><em>2014-11-26</em></h4>
 </div>
 
 
@@ -78,14 +78,14 @@ code > span.er { color: #ff0000; font-weight: bold; }
 </div>
 <div id="get-a-description" class="section level2">
 <h2>Get a description!</h2>
-<p>After you have make your decision, use the model name that you get from <code>gModel()</code> as the input of <code>gDescription()</code> to get a general description of that mic! Let’s try to get a description of the TLM49 mic by using <code>gDescription(&quot;tlm49&quot;)</code>. Note if you don’t pass any input to <code>gDescription()</code>, the default input is <code>&quot;u87&quot;</code> which gets you the description of the widely recognized u87 mic~!</p>
+<p>After you have make your decision, use the model name that you get from <code>gModel()</code> as the input of <code>gDescription()</code> to get a general description of that mic! Let’s try to get a description of the TLM49 mic by using <code>gDescription(&quot;tlm49&quot;)</code>. Note if you don’t pass any input to <code>gDescription()</code>, the default input is <code>&quot;u87&quot;</code> which gets you the description of the widely recognized u87 mic~! There are special cases that a number of models sharing one common url. Special case handling involves url redirecting and retrieving a common description from the common url.</p>
 <pre class="sourceCode r"><code class="sourceCode r">## Get the description of TLM49!
 <span class="kw">gDescription</span>(<span class="st">&quot;tlm49&quot;</span>)</code></pre>
 <pre><code>## [1] &quot;The TLM 49* is a large-diaphragm studio microphone with a cardioid directional characteristic and a warm sound which is especially optimized for vocal performance. It is supplied as a set, with an elastic suspension.The design is inspired by that of the legendary M 49 and M 50 microphones of the 1950s. Naturally the TLM 49 has the typical Neumann fine matte nickel finish. The â€œsound designâ€ is also oriented toward that of the M 49 and the U 47. By combining its retro look with proven Neumann transformerless circuit technology, this microphone ensures low self-noise and the use of high gain levels.&quot;</code></pre>
 </div>
 <div id="please-tell-me-the-technical-data" class="section level2">
 <h2>Please tell me the technical data!</h2>
-<p>You decided that you like this mic very much according to its description. Why not have a look at its technical data before you buy it? Again, use the model name that you get from <code>gModel()</code> as the input of <code>gMicData()</code> to get the technical data of your favorite mic! To me, the KU100 binaural mic seems to be very interesting! <code>gMicData(&quot;ku100&quot;)</code> would give me what I want! Note if you don’t pass any input to <code>gMicData()</code>, the default input is <code>&quot;u87&quot;</code> which gets you the technical data of the widely recognized u87 mic~!</p>
+<p>You decided that you like this mic very much according to its description. Why not have a look at its technical data before you buy it? Again, use the model name that you get from <code>gModel()</code> as the input of <code>gMicData()</code> to get the technical data of your favorite mic! To me, the KU100 binaural mic seems to be very interesting! <code>gMicData(&quot;ku100&quot;)</code> would give me what I want! Note if you don’t pass any input to <code>gMicData()</code>, the default input is <code>&quot;u87&quot;</code> which gets you the technical data of the widely recognized u87 mic~! There are special cases that a number of models sharing one common url. Special case handling involves url redirecting and retrieving the technical data of multiple models from the common url.</p>
 <pre class="sourceCode r"><code class="sourceCode r">## Get the techinical data of KU100!
 knitr::<span class="kw">kable</span>(<span class="kw">gMicData</span>(<span class="st">&quot;ku100&quot;</span>))</code></pre>
 <table>
@@ -121,27 +121,27 @@ knitr::<span class="kw">kable</span>(<span class="kw">gMicData</span>(<span clas
 <td align="left">1 kohms</td>
 </tr>
 <tr class="odd">
-<td align="left">Equivalent noise level, CCIR</td>
+<td align="left">Equivalent noise level, CCIR1)</td>
 <td align="left">29 dB</td>
 </tr>
 <tr class="even">
-<td align="left">Equivalent noise level, A-weighted</td>
+<td align="left">Equivalent noise level, A-weighted1)</td>
 <td align="left">16 dB-A</td>
 </tr>
 <tr class="odd">
-<td align="left">Signal-to-noise ratio, CCIR (rel. 94 dB SPL)</td>
+<td align="left">Signal-to-noise ratio, CCIR1) (rel. 94 dB SPL)</td>
 <td align="left">65 dB</td>
 </tr>
 <tr class="even">
-<td align="left">Signal-to-noise ratio, A-weighted (rel. 94 dB SPL)</td>
+<td align="left">Signal-to-noise ratio, A-weighted1) (rel. 94 dB SPL)</td>
 <td align="left">78 dB</td>
 </tr>
 <tr class="odd">
-<td align="left">Maximum SPL for THD 0.5%</td>
+<td align="left">Maximum SPL for THD 0.5%2)</td>
 <td align="left">135 dB</td>
 </tr>
 <tr class="even">
-<td align="left">Maximum SPL for THD 0.5% with preattenuation</td>
+<td align="left">Maximum SPL for THD 0.5% with preattenuation2)</td>
 <td align="left">145 dB</td>
 </tr>
 <tr class="odd">

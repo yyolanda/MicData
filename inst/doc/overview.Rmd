@@ -26,7 +26,7 @@ gModel()
 
 ## Get a description!
 
-After you have make your decision, use the model name that you get from ```gModel()``` as the input of ```gDescription()``` to get a general description of that mic! Let's try to get a description of the TLM49 mic by using ```gDescription("tlm49")```. Note if you don't pass any input to ```gDescription()```, the default input is ```"u87"``` which gets you the description of the widely recognized u87 mic~!
+After you have make your decision, use the model name that you get from ```gModel()``` as the input of ```gDescription()``` to get a general description of that mic! Let's try to get a description of the TLM49 mic by using ```gDescription("tlm49")```. Note if you don't pass any input to ```gDescription()```, the default input is ```"u87"``` which gets you the description of the widely recognized u87 mic~! There are special cases that a number of models sharing one common url. Special case handling involves url redirecting and retrieving a common description from the common url.
 
 ```{r}
 ## Get the description of TLM49!
@@ -35,7 +35,8 @@ gDescription("tlm49")
 
 ## Please tell me the technical data!
 
-You decided that you like this mic very much according to its description. Why not have a look at its technical data before you buy it? Again, use the model name that you get from ```gModel()``` as the input of ```gMicData()``` to get the technical data of your favorite mic! To me, the KU100 binaural mic seems to be very interesting! ```gMicData("ku100")``` would give me what I want! Note if you don't pass any input to ```gMicData()```, the default input is ```"u87"``` which gets you the technical data of the widely recognized u87 mic~!
+You decided that you like this mic very much according to its description. Why not have a look at its technical data before you buy it? Again, use the model name that you get from ```gModel()``` as the input of ```gMicData()``` to get the technical data of your favorite mic! To me, the KU100 binaural mic seems to be very interesting! ```gMicData("ku100")``` would give me what I want! Note if you don't pass any input to ```gMicData()```, the default input is ```"u87"``` which gets you the technical data of the widely recognized u87 mic~! There are special cases that a number of models sharing one common url. Special case handling involves url redirecting and retrieving the technical data of multiple models from the common url.
+
 
 ```{r, results='asis'}
 ## Get the techinical data of KU100!
