@@ -6,12 +6,11 @@
 gDescription(model.name = "u87")
 }
 \arguments{
-\item{model.name}{This is the model name of your chosen mic.
-Letters and numbers only. No special characters
-allowed.}
+\item{model.name}{This is the model name of your chosen mic. Please use
+one of the model names that results from calling function "gModel".}
 }
 \value{
-character This character vector contains the general description
+character This character vector contains the general description.
 of your chosen mic.
 }
 \description{
@@ -21,7 +20,7 @@ This function returns a general description of your chosen mic!
 Please tell me something about my favorite mic!
 }
 \note{
-case in \code{model.name} is ignored
+Case in \code{model.name} is ignored.
 }
 \examples{
 gDescription("KU100")

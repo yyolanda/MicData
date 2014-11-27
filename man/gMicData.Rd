@@ -6,17 +6,17 @@
 gMicData(model.name = "u87")
 }
 \arguments{
-\item{model.name}{This is the model name of your chosen mic.
-Letters and numbers only. No special characters
-allowed.}
+\item{model.name}{This is the model name of your chosen mic. Please use
+one of the model names that results from calling function "gModel". Note
+that the technical data is not available for some of the mic models.}
 }
 \value{
-data.frame This table contains the technical data of your
+list or data.frame The tables contain the technical data of your
 chosen mic.
 }
 \description{
-This function returns a table which contains the technical data
-of your chosen NEUMANN microphone.
+This function returns a table or a list or tables which contains the
+technical data of your chosen NEUMANN microphone.
 }
 \details{
 You are thinking buying a NEUMANN mic, but really want to read
