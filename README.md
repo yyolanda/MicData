@@ -15,7 +15,7 @@ Now use R to solve your problems!
 Run the following code in your R console to install the package!
 ```
 library(devtools)
-install_github("yyolanda/MicData")
+install_github("yyolanda/MicData", build_vignettes = TRUE)
 ```
 
 
