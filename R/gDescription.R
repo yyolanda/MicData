@@ -19,7 +19,12 @@
 gDescription <- function(model.name = "u87"){
 	assertthat::assert_that(is.character(model.name))
 	## convert the input string to lowercase
-	model_name <- tolower(gsub(" ", "", model.name))
+	if(model.name == "u47fet_CE"){
+		model_name <- "u47fet_CE"
+	}
+	else{
+		model_name <- tolower(gsub(" ", "", model.name))
+	}
   ## creat the url and special case handling
 	if(grepl('^km[0-9]{3}$', model_name)|grepl("^skm[0-9]{3}$", model_name)){
 		url <- paste0("http://www.neumann.com/?lang=en&id=current_microphones&cid=", "km100", "_description")
